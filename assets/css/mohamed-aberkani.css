@@ -30,6 +30,18 @@
     width: 15rem;
 }
 
+.go-back {
+    position: fixed;
+    top: 10px;
+    left: 5px;
+    color: var(--clr-white);
+    font-size: x-large;
+    background-color: var(--clr-black);
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px;
+    border: 3px solid var(--clr-white);
+}
+
 .name {
     font-family: "GameOfSquidsFont";
     font-size: 1.5rem;
