@@ -75,15 +75,19 @@ article {
     font-family: "GameOfSquidsFont";
     font-size: 45px;
     font-weight: 600;
+    color: var(--clr-white);
+    /* background-color: var(--clr-black); */
+    border-bottom: 5px solid;
+    margin-bottom: 1rem;
 }
 
-@supports (-webkit-text-stroke: 1px var(--clr-white)) {
+/* @supports (-webkit-text-stroke: 1px var(--clr-white)) {
     .title {
         -webkit-text-stroke-width: 0.1px;
         -webkit-text-stroke-color: var(--clr-white);
         -webkit-text-fill-color: var(--clr-red);
     }
-}
+} */
 
 .board {
     margin-top: 15px;

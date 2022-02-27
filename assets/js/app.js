@@ -7,8 +7,12 @@ let playIconElement = document.getElementById("play-icon");
 let toggleImgBtn = document.getElementById("toggle-img-btn");
 let squidCoderSvgElements = document.querySelectorAll(".squid-coder-svg");
 
-audioBtnElement.addEventListener("click", toggleAudio);
-toggleImgBtn.addEventListener("click", toggleImg);
+if(audioBtnElement != null) {
+    audioBtnElement.addEventListener("click", toggleAudio);
+}
+if(toggleImgBtn != null) {
+    toggleImgBtn.addEventListener("click", toggleImg);
+}
 
 function toggleImg() {
     squidCoderSvgElements.forEach(node => {
