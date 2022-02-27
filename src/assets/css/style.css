@@ -1,3 +1,235 @@
+@font-face {
+    font-family: "GameOfSquidsFont";
+    src: url("http://127.0.0.1:5500/src/assets/fonts/game_of_squids.ttf");
+}
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+    /* colors */
+    --clr-white: #F5F5F5;
+    --clr-green: #347874;
+    --clr-red: #BF4265;
+    --clr-black: #303030;
+    --clr-pink: rgba(191, 66, 101, 0.15);
+
+    /* font-sizes */
+
+    /* font-families */
+    --ff-serif: "Bellefair", serif;
+}
+
+/* ------------- */
+/* Rest */
+/* ------------- */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+/* ------------ */
+/* Setup */
+/* ------------ */
 body {
+    font-family: 'Cairo', sans-serif;
     background-color: #347874;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 640px;
+    flex: 1 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+article {
+    width: 100%;
+    text-align: center;
+}
+
+.title {
+    font-family: "GameOfSquidsFont";
+    font-size: 45px;
+    font-weight: 600;
+}
+
+@supports (-webkit-text-stroke: 1px var(--clr-white)) {
+    .title {
+        -webkit-text-stroke-width: 0.1px;
+        -webkit-text-stroke-color: var(--clr-white);
+        -webkit-text-fill-color: var(--clr-red);
+    }
+}
+
+.board {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    background-color: var(--clr-white);
+    display: grid;
+    gap: 0px 0px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.board svg {
+    width: 100%;
+}
+
+#squid-audio {
+    display: none;
+}
+
+.toggle-audio {
+    background-color: var(--clr-black);
+    padding: 15px;
+    border: 5px solid var(--clr-white);
+    border-radius: 15px;
+    position: fixed;
+    bottom: 25px;
+    right: 10px;
+    z-index: 1;
+}
+
+.toggle-audio > i {
+    font-size: 48px !important;
+    color: var(--clr-white);
+}
+
+.coder {
+    background-color: var(--clr-pink);
+    border: 2px solid var(--clr-red);
+    padding: 15px;
+}
+
+.coder img {
+    border-radius: 50%;
+    height: auto;
+    width: 100%;
+    padding: 13px;
+}
+
+.coder-img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.coder-img svg {
+    position: absolute;
+    left: 0;
+    -webkit-transition: opacity 1s ease-in-out;
+    -moz-transition: opacity 1s ease-in-out;
+    -o-transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out;
+}
+
+.transform-active-coder-img {
+    opacity: 0;
+}
+
+.mask-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mask-switch-span {
+    margin-right: 10px;
+    font-size: x-large;
+    font-weight: 700;
+    color: var(--clr-white);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--clr-white);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--clr-black);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--clr-red);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--clr-red);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 60px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 80px;
+    }
 }
