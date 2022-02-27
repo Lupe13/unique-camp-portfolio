@@ -1,14 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unique Camp</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicon/site.webmanifest">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
 
+<body>
+    <main class="container">
+        <audio id="squid-audio" controls loop>
+            <source src="./assets/audio/instro.mp3" type="audio/mpeg">
+        </audio>
+
+        <span id="toggle-audio-btn" class="toggle-audio">
+            <i id="play-icon" class="fa fa-play"></i>
+            <i id="pause-icon" class="fa fa-pause" style="display: none;"></i>
+        </span>
+
+        <article>
+            <h1 class="title">Unique Camp</h1>
+            <div class="mask-switch">
+                <span class="mask-switch-span">Discover us</span>
+                <label class="switch">
+                    <input id="toggle-img-btn" type="checkbox" checked>
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="board">
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+                <div class="coder">
+                    <div class="coder-img">
+                        <svg class="squid-coder-svg" width="100%" height="100%" fill="none" viewBox="0 0 57 69"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M56.7061 32.2318C56.7061 49.7947 45.9029 68.4315 28.6062 68.4315C11.3095 68.4315 0.630117 49.7947 0.630117 32.2318C-1.1655 14.4136 9.29527 0.431457 28.6062 0.431458C47.9171 0.431458 57.8851 13.3175 56.7061 32.2318Z"
+                                fill="#BF4265" />
+                            <path
+                                d="M54.1833 33.8723C54.1833 49.4997 44.4226 66.0828 28.7951 66.0828C13.1676 66.0828 3.51881 49.4997 3.51881 33.8723C1.89648 18.0175 11.3478 5.5762 28.7951 5.5762C46.2425 5.5762 55.2485 17.0423 54.1833 33.8723Z"
+                                fill="#303030" />
+                            <path d="M6.69464 35.7736L50.9841 34.8788" stroke="#F5F5F5" stroke-width="4"
+                                stroke-linecap="round" />
+                            <circle cx="28.8393" cy="20.563" r="8.56579" stroke="#F5F5F5" stroke-width="3" />
+                        </svg>
+                        <img src="./assets/img/coder-1.jpg" alt="coder picture">
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </main>
     <script src="./assets/js/app.js"></script>
 </body>
+
 </html>
